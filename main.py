@@ -7,49 +7,45 @@ from todo_manager import read_todo_file, write_todo_file
 
 try:
     file_path = sys.argv[1]
-    command = sys.argv[2]
+    args = sys.argv[2:]
 
-    if command == "view":
-        tasks = read_todo_file(file_path)
+    tasks = read_todo_file(file_path)
 
-        print("Tasks:")
-        for task in tasks:
-            print(task)
+    i = 0
+    while i < len(args):
 
-    elif command == "add":
-        task = sys.argv[3]
+        if args[i] == "view":
+            print("Tasks:")
+            for t in tasks:
+                print(t)
+            i += 1
 
-        tasks = read_todo_file(file_path)
-        tasks.append(task)
-        write_todo_file(file_path, tasks)
+        elif args[i] == "add":
+            if i + 1 >= len(args):
+                print('Task description required for "add".')
+                i += 1
+            else:
+                tasks.append(args[i + 1])
+                print(f'Task "{args[i + 1]}" added.')
+                i += 2
 
-        print(f'Task "{task}" added.')
+        elif args[i] == "remove":
+            if i + 1 >= len(args):
+                print('Task description required for "remove".')
+                i += 1
+            else:
+                if args[i + 1] in tasks:
+                    tasks.remove(args[i + 1])
+                    print(f'Task "{args[i + 1]}" removed.')
+                else:
+                    print(f'Task "{args[i + 1]}" not found.')
+                i += 2
 
-    elif command == "remove":
-        task = sys.argv[3]
+        else:
+            print("Command not found!")
+            break
 
-        tasks = read_todo_file(file_path)
-
-        try:
-            tasks.remove(task)
-            write_todo_file(file_path, tasks)
-            print(f'Task "{task}" removed.')
-        except ValueError:
-            print(f'Task "{task}" not found.')
-
-    else:
-        raise ValueError("Command not found!")
+    write_todo_file(file_path, tasks)
 
 except IndexError:
-    if len(sys.argv) >= 3:
-        command = sys.argv[2]
-
-        if command == "add":
-            print('Task description required for "add".')
-        elif command == "remove":
-            print('Task description required for "remove".')
-    else:
-        pass
-
-except ValueError as error:
-    print(error)
+    print("Insufficient arguments provided!")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
