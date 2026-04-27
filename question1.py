@@ -4,3 +4,17 @@ Implementa una CLI que calcule carga por punto de soporte.
 """
 
 # TODO: Implementar según README.md
+import sys 
+try:
+    total_load = float(sys.argv[1])
+    num_supports = float(sys.argv[2])
+
+    if num_supports == 0:
+        print("Error: Cannot divide by zero! Supports must be greater than zero.")
+    else:
+        load_per_support = total_load / num_supports
+        print(f"Load per support point: {load_per_support:.2f} N")
+
+except:
+    print("Error: Invalid input! Enter numeric values only.")
+    
