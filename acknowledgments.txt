@@ -11,19 +11,20 @@ Número de horas: 8
 ******************************************************************************/
 
 ¿Sí o no?
+no
 
 
 /****************************************************************************
 * Escribe cualquier otro comentario aquí.
 ******************************************************************************/
 
-
+Me parecio muy entretenido como creamos estesistema para añadir tareas ya que lo podemos usar en nuestra vida universitaria.
 
 /****************************************************************************
  *  Proporciona el enlace de tu perfil de GitHub (ej. https://github.com/afbeltranp)
  ******************************************************************************/
 
-[escribe el enlace aquí]
+https://github.com/federicomejbe
 
 /****************************************************************************
  *  Escribe y firma el siguiente reconocimiento estudiantil de trabajo original.
@@ -34,4 +35,5 @@ Número de horas: 8
  *      con las regulaciones de la Universidad.  /s/ Ada Lovelace
  ******************************************************************************/
 
-[escribe y firma la declaración aquí]
+ *      Esta tarea de programación representa mi propio trabajo de acuerdo
+ *      con las regulaciones de la Universidad.  /s/ Ada Lovelace
